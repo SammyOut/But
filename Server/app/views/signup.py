@@ -23,9 +23,8 @@ class Signup(BaseResource):
         """
         payload = request.json
         uuid = str(uuid4())
-        payload['uuid'] = uuid
 
-        user = UserModel(**payload).save()
+        user = UserModel(uuid=uuid, **payload).save()
         FriendModel(
             user=user
         ).save()
