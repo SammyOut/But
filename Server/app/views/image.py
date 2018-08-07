@@ -20,10 +20,16 @@ UPLOAD_FOLDER = 'static/upload'
 class Image(BaseResource):
     @swag_from(IMAGE_GET)
     def get(self, image_name):
+        """
+        이미지 불러오기
+        """
         return send_from_directory(UPLOAD_FOLDER, image_name)
 
     @swag_from(IMAGE_POST)
     def post(self):
+        """
+        이미지 업로드 하기
+        """
         if not request.headers['Authorization']:
             abort(401)
 

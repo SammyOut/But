@@ -16,6 +16,9 @@ api.prefix = '/mail'
 class Mail(BaseResource):
     @swag_from(MAIL_POST)
     def post(self):
+        """
+        연서 보내기
+        """
         user = UserModel.objects(uuid=request.headers['Authorization']).first()
         if not user:
             abort(401)
@@ -32,11 +35,11 @@ class Mail(BaseResource):
 
         return Response('', 201)
 
-
-@api.resource('/list')
-class MailList(BaseResource):
     @swag_from(MAIL_LIST_GET)
     def get(self):
+        """
+        연서 목록 가져오기
+        """
         user = UserModel.objects(uuid=request.headers['Authorization']).first()
         mails = MailModel.objects(receiver=user)
 

@@ -17,6 +17,9 @@ api.prefix = '/signup'
 class Signup(BaseResource):
     @swag_from(SIGNUP_POST)
     def post(self):
+        """
+        정보 등록
+        """
         payload = request.json
         uuid = uuid4()
         payload['uuid'] = uuid
