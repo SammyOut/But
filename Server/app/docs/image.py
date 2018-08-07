@@ -3,13 +3,6 @@ IMAGE_POST = {
     'description': '이미지 저장하기',
     'parameters': [
         {
-            'name': 'Authorization',
-            'description': 'api를 호출한 사람의 uuid',
-            'in': 'header',
-            'type': 'string',
-            'required': True
-        },
-        {
             'name': 'image',
             'description': '이미지',
             'in': 'file',
@@ -24,9 +17,6 @@ IMAGE_POST = {
             'example': {
                 'image_name': '이미지 이름'
             }
-        },
-        '401': {
-            'description': 'api를 호출한 사람의 uuid 오류'
         }
     }
 }

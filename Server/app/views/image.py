@@ -30,8 +30,6 @@ class Image(BaseResource):
         """
         이미지 업로드 하기
         """
-        if not request.headers['Authorization']:
-            abort(401)
 
         image = request.files['image']
         image_name = secure_filename(image.filename)
