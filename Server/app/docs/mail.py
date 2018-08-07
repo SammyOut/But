@@ -38,36 +38,6 @@ MAIL_POST = {
     }
 }
 
-MAIL_GET = {
-    'tags': ['mail'],
-    'description': '연서 보기',
-    'parameters': [
-        {
-            'name': 'Authorization',
-            'description': 'api를 호출한 사람의 uuid',
-            'in': 'header',
-            'type': 'string',
-            'required': True
-        }
-    ],
-    'responses': {
-        '200': {
-            'description': '성공',
-            'example': {
-                    'mail': '이미지 url',
-                    'sender': '보낸 사람의 이름',
-                    'sender_id': '보낸 사람의 uuid'
-                }
-        },
-        '204': {
-            'description': '연서 uuid가 없음'
-        },
-        '401': {
-            'description': 'api를 호출한 사람의 uuid 오류'
-        }
-    }
-}
-
 MAIL_LIST_GET = {
     'tags': ['mail'],
     'description': '연서 리스트 가져오기',
