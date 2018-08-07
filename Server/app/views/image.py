@@ -33,5 +33,5 @@ class Image(BaseResource):
 
         image = request.files['image']
         image_name = secure_filename(image.filename)
-        image.save(os.path.join(UPLOAD_FOLDER), image_name)
+        image.save(os.path.join(UPLOAD_FOLDER, image_name))
         return self.unicode_safe_json_dumps({'image_name': image_name})
