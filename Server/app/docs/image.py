@@ -20,7 +20,10 @@ IMAGE_POST = {
 
     'responses': {
         '201': {
-            'description': '성공'
+            'description': '성공',
+            'example': {
+                'image_name': '이미지 이름'
+            }
         },
         '401': {
             'description': 'api를 호출한 사람의 uuid 오류'

@@ -20,13 +20,14 @@ UPLOAD_FOLDER = 'static/upload'
 class Image(BaseResource):
     @swag_from(IMAGE_GET)
     def get(self, image_name):
-        if not request.headers['Authorization']:
-            abort(401)
         return send_from_directory(UPLOAD_FOLDER, image_name)
 
     @swag_from(IMAGE_POST)
     def post(self):
+        if not request.headers['Authorization']:
+            abort(401)
+
         image = request.files['image']
         image_name = secure_filename(image.filename)
         image.save(os.path.join(UPLOAD_FOLDER), image_name)
-        return Response('', 201)
+        return self.unicode_safe_json_dumps({'image_name': image_name})

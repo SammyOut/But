@@ -55,12 +55,12 @@ MAIL_LIST_GET = {
             'description': '성공',
             'example': [
                     {
-                        'mail': '이미지 url',
+                        'mail': '이미지 이름 url',
                         'sender': '보낸 사람의 이름',
                         'sender_id': '보낸 사람의 uuid'
                     },
                     {
-                        'mail': '이미지 url ㅁㅁㅁ',
+                        'mail': '이미지 이름 ㅁㅁㅁ',
                         'sender': '보낸 사람의 이름 ㅁㅁㅁ',
                         'sender_id': '보낸 사람의 uuid ㅁㅁㅁ'
                     }                    
