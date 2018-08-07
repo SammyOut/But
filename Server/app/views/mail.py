@@ -41,7 +41,7 @@ class Mail(BaseResource):
         MailModel(
             sender=user,
             receiver=receiver,
-            mail=request.json['mail']
+            image=request.json['mail']
         ).save()
 
         return Response('', 201)
