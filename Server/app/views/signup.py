@@ -22,12 +22,11 @@ class Signup(BaseResource):
         정보 등록
         """
         payload = request.json
-        uuid = uuid4()
+        uuid = str(uuid4())
         payload['uuid'] = uuid
 
         user = UserModel(**payload).save()
         FriendModel(
             user=user
         ).save()
-
         return self.unicode_safe_json_dumps({'user_id': uuid}, 201)
