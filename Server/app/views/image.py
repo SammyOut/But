@@ -13,7 +13,7 @@ from werkzeug.utils import secure_filename
 api = Api(mail_blueprint)
 api.prefix = '/image'
 
-UPLOAD_FOLDER = 'static/upload'
+UPLOAD_FOLDER = '/home/ubuntu/But/Server/static/image'
 
 
 @api.resource('/')
