@@ -28,6 +28,6 @@ class Signup(BaseResource):
         user = UserModel(**payload).save()
         FriendModel(
             user=user
-        )
+        ).save()
 
         return self.unicode_safe_json_dumps({'user_id': uuid}, 201)
