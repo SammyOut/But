@@ -6,6 +6,7 @@ from app import mail_blueprint
 from app.docs.mail import *
 from app.models.mail import MailModel
 from app.models.user import UserModel
+from app.models.friend import FriendModel
 from app.views import BaseResource
 
 api = Api(mail_blueprint)
@@ -26,6 +27,16 @@ class Mail(BaseResource):
         receiver = UserModel.objects(uuid=request.json['receiver_id']).first()
         if not receiver:
             return Response('', 204)
+
+        friends = FriendModel.objects(user=user).first()
+        if receiver not in friends.friend:
+            friends.friend.append(receiver)
+            friends.save()
+
+        friends = FriendModel.objects(user=receiver).first()
+        if user not in friends.friend:
+            friends.friend.append(user)
+            friends.save()
 
         MailModel(
             sender=user,

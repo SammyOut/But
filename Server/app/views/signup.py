@@ -7,6 +7,7 @@ from uuid import uuid4
 from app import signup_blueprint
 from app.docs.signup import *
 from app.models.user import UserModel
+from app.models.friend import FriendModel
 from app.views import BaseResource
 
 api = Api(signup_blueprint)
@@ -24,6 +25,9 @@ class Signup(BaseResource):
         uuid = uuid4()
         payload['uuid'] = uuid
 
-        UserModel(**payload).save()
+        user = UserModel(**payload).save()
+        FriendModel(
+            user=user
+        )
 
         return self.unicode_safe_json_dumps({'user_id': uuid}, 201)

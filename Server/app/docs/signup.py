@@ -31,19 +31,12 @@ SIGNUP_POST = {
             'required': True
         },
         {
-            'name': 'nickname',
-            'description': '닉네임',
+            'name': 'profile_image',
+            'description': '프로필 사진 이름',
             'in': 'json',
-            'type': 'str',
-            'required': True
-        },
-        {
-            'name': 'prefer_age',
-            'description': '선호 나이대 (60대 => 60, 70대 => 70)',
-            'in': 'json',
-            'type': 'int',
-            'required': True
-        },
+            'type': 'string',
+            'required': False
+        }
     ],
     'responses': {
         '201': {

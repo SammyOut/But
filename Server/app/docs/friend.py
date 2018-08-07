@@ -17,10 +17,10 @@ FIND_FRIEND_POST = {
             'required': True
         },
         {
-            'name': 'age',
-            'description': '본인 희망 연령대를 검색할 것인가',
+            'name': 'count',
+            'description': '가져올 친구 수',
             'in': 'json',
-            'type': 'bool',
+            'type': 'int',
             'required': True
         }
     ],

@@ -28,3 +28,6 @@ class UserModel(Document):
     prefer_age = IntField(
         required=True
     )
+    profile_image = StringField(
+        default='default_profile.jpg'
+    )
