@@ -27,7 +27,7 @@ class BaseResource(Resource):
 
 def load_api():
     from app.views import sample
-    from app.views import friend, mail, signup
+    from app.views import friend, mail, signup, image
 
 
 def route(app):

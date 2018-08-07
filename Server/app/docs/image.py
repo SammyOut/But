@@ -33,16 +33,9 @@ IMAGE_GET = {
     'description': '이미지 로드하기',
     'parameters': [
         {
-            'name': 'Authorization',
-            'description': 'api를 호출한 사람의 uuid',
-            'in': 'header',
-            'type': 'string',
-            'required': True
-        },
-        {
             'name': 'image_name',
             'description': '이미지 이름',
-            'in': 'json',
+            'in': 'query params',
             'type': 'string',
             'required': True
         }
@@ -54,9 +47,6 @@ IMAGE_GET = {
         },
         '204': {
             'description': '이미지 없음'
-        },
-        '401': {
-            'description': 'api를 호출한 사람의 uuid 오류'
         }
     }
 }
