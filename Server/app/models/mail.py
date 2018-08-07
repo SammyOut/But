@@ -9,9 +9,13 @@ class MailModel(Document):
     }
 
     sender = ReferenceField(
-        document_type=UserModel
+        document_type=UserModel,
+        required=True
     )
-    image = ImageField()
+    image = StringField(
+        required=True
+    )
     receiver = ReferenceField(
-        document_type=UserModel
+        document_type=UserModel,
+        required=True
     )

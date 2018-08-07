@@ -16,7 +16,21 @@ api.prefix = '/mail'
 class Mail(BaseResource):
     @swag_from(MAIL_POST)
     def post(self):
-        pass
+        user = UserModel.objects(uuid=request.headers['Authorization']).first()
+        if not user:
+            abort(401)
+
+        receiver = UserModel.objects(uuid=request.json['receiver_id']).first()
+        if not receiver:
+            return Response('', 204)
+
+        MailModel(
+            sender=user,
+            receiver=receiver,
+            mail=request.json['mail']
+        ).save()
+
+        return Response('', 201)
 
 
 @api.resource('/list')
@@ -24,7 +38,7 @@ class MailList(BaseResource):
     @swag_from(MAIL_LIST_GET)
     def get(self):
         user = UserModel.objects(uuid=request.headers['Authorization']).first()
-        mails = MailModel.objects.filter(Q(sender=user) or Q(receiver=user))
+        mails = MailModel.objects(receiver=user)
 
         if not user:
             abort(401)

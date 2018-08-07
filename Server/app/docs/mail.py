@@ -12,15 +12,15 @@ MAIL_POST = {
         {
             'name': 'receiver_id',
             'description': '수신자 uuid',
-            'in': 'form',
+            'in': 'json',
             'type': 'string',
             'required': True
         },
         {
             'name': 'mail',
-            'description': '연서 이미지',
-            'in': 'file',
-            'type': 'image',
+            'description': '연서 이미지 파일 이름',
+            'in': 'json',
+            'type': 'string',
             'required': True
         }
     ],
@@ -55,7 +55,7 @@ MAIL_LIST_GET = {
             'description': '성공',
             'example': [
                     {
-                        'mail': '이미지 이름 url',
+                        'mail': '이미지 이름',
                         'sender': '보낸 사람의 이름',
                         'sender_id': '보낸 사람의 uuid'
                     },
