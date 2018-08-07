@@ -47,14 +47,14 @@ class FriendList(BaseResource):
         if not user:
             abort(401)
 
-        friends = FriendModel.objects(user=user).first()
-        if not friends:
+        friend = FriendModel.objects(user=user).first()
+        if not friend:
             return Response('', 204)
 
         result = [{
             'id': friend.uuid,
             'name': friend.name,
             'profile_image': friend.profile_image
-        }for friend in friends]
+        }for friend in friend.friend]
 
         return self.unicode_safe_json_dumps(result)
