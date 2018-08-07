@@ -54,12 +54,10 @@ MAIL_GET = {
         '200': {
             'description': '성공',
             'example': {
-                '': {
                     'mail': '이미지 url',
                     'sender': '보낸 사람의 이름',
                     'sender_id': '보낸 사람의 uuid'
                 }
-            }
         },
         '204': {
             'description': '연서 uuid가 없음'
@@ -85,8 +83,7 @@ MAIL_LIST_GET = {
     'responses': {
         '200': {
             'description': '성공',
-            'example': {
-                '': [
+            'example': [
                     {
                         'mail': '이미지 url',
                         'sender': '보낸 사람의 이름',
@@ -98,7 +95,6 @@ MAIL_LIST_GET = {
                         'sender_id': '보낸 사람의 uuid ㅁㅁㅁ'
                     }                    
                 ]
-            }
         },
         '204': {
             'description': '받은 연서가 없음'

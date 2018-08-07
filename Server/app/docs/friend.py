@@ -27,8 +27,7 @@ FIND_FRIEND_POST = {
     'responses': {
         '201': {
             'description': '성공',
-            'examples': {
-                '': [{
+            'examples': [{
                         'name': '이름',
                         'profile_image': '프로필 사진',
                         'id': 'uuid'
@@ -39,7 +38,6 @@ FIND_FRIEND_POST = {
                         'id': 'uuid ㅁㅁㅁ'
                     }
                 ]
-            }
         },
         '204': {
             'description': '검색 결과 없음'
@@ -66,8 +64,7 @@ FRIEND_LIST_GET = {
     'responses': {
         '201': {
             'description': '성공',
-            'examples': {
-                '': [{
+            'examples': [{
                         'name': '이름',
                         'profile_image': '프로필 사진',
                         'id': 'uuid'
@@ -78,7 +75,6 @@ FRIEND_LIST_GET = {
                         'id': 'uuid ㅁㅁㅁ'
                     }
                 ]
-            }
         },
         '204': {
             'description': '검색 결과 없음'

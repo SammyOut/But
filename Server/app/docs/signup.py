@@ -39,10 +39,18 @@ SIGNUP_POST = {
         },
         {
             'name': 'prefer_age',
-            'description': '선호 나이대',
+            'description': '선호 나이대 (60대 => 60, 70대 => 70)',
             'in': 'json',
-            'type': 'str',
+            'type': 'int',
             'required': True
         },
-    ]
+    ],
+    'responses': {
+        '201': {
+            'description': '성공',
+            'example': {
+                'user_id': '유저uuid'
+            }
+        }
+    }
 }
