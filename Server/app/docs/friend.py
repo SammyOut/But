@@ -27,7 +27,7 @@ FIND_FRIEND_POST = {
     'responses': {
         '201': {
             'description': '성공',
-            'examples': [{
+            'example': [{
                         'name': '이름',
                         'profile_image': '프로필 사진',
                         'id': 'uuid'
@@ -64,7 +64,7 @@ FRIEND_LIST_GET = {
     'responses': {
         '201': {
             'description': '성공',
-            'examples': [{
+            'example': [{
                         'name': '이름',
                         'profile_image': '프로필 사진',
                         'id': 'uuid'
