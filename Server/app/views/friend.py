@@ -32,7 +32,9 @@ class FindFriend(BaseResource):
         result = [{
             'id': person.uuid,
             'name': person.name,
-            'profile_image': person.profile_image
+            'profile_image': person.profile_image,
+            'region': person.region,
+            'age': person.age
         } for person in people]
         shuffle(result)
 
@@ -54,7 +56,9 @@ class FriendList(BaseResource):
         result = [{
             'id': friend.uuid,
             'name': friend.name,
-            'profile_image': friend.profile_image
+            'profile_image': friend.profile_image,
+            'region': friend.region,
+            'age': friend.age
         }for friend in friend.friend]
 
         return self.unicode_safe_json_dumps(result)

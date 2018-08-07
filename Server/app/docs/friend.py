@@ -30,12 +30,16 @@ FIND_FRIEND_POST = {
             'example': [{
                         'name': '이름',
                         'profile_image': '프로필 사진',
-                        'id': 'uuid'
+                        'id': 'uuid',
+                        'region': '사는 곳',
+                        'age': '나이'
                     },
                     {
                         'name': '이름 ㅁㅁㅁ',
                         'profile_image': '프로필 사진 ㅁㅁㅁ',
-                        'id': 'uuid ㅁㅁㅁ'
+                        'id': 'uuid ㅁㅁㅁ',
+                        'region': '사는 곳 ㅁㅁㅁ',
+                        'age': '나이 ㅁㅁㅁ'
                     }
                 ]
         },
@@ -67,12 +71,16 @@ FRIEND_LIST_GET = {
             'example': [{
                         'name': '이름',
                         'profile_image': '프로필 사진',
-                        'id': 'uuid'
+                        'id': 'uuid',
+                        'region': '사는 곳',
+                        'age': '나이'
                     },
                     {
                         'name': '이름 ㅁㅁㅁ',
                         'profile_image': '프로필 사진 ㅁㅁㅁ',
-                        'id': 'uuid ㅁㅁㅁ'
+                        'id': 'uuid ㅁㅁㅁ',
+                        'region': '사는 곳 ㅁㅁㅁ',
+                        'age': '나이 ㅁㅁㅁ'
                     }
                 ]
         },
