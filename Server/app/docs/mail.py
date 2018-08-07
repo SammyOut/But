@@ -1,5 +1,5 @@
 MAIL_POST = {
-    'tags': ['연서'],
+    'tags': ['mail'],
     'description': '연서 보내기',
     'parameters': [
         {
@@ -39,7 +39,7 @@ MAIL_POST = {
 }
 
 MAIL_GET = {
-    'tags': ['연서'],
+    'tags': ['mail'],
     'description': '연서 보기',
     'parameters': [
         {
@@ -71,7 +71,7 @@ MAIL_GET = {
 }
 
 MAIL_LIST_GET = {
-    'tags': ['연서'],
+    'tags': ['mail'],
     'description': '연서 리스트 가져오기',
     'parameters': [
         {

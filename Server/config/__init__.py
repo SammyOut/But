@@ -42,8 +42,16 @@ class Config:
         ],
         'tags': [
             {
-                'name': 'Some Tag',
-                'description': 'Some API'
+                'name': 'mail',
+                'description': '연서 관련 API'
             },
+            {
+                'name': 'friend',
+                'description': '친구 관련 API'
+            },
+            {
+                'name': 'signup',
+                'description': '정보 등록'
+            }
         ]
     }
