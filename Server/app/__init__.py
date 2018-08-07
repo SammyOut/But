@@ -6,6 +6,9 @@ from mongoengine import connect
 from app.views import route
 
 api_v1_blueprint = Blueprint('api', __name__)
+mail_blueprint = Blueprint('mail_api', __name__)
+friend_blueprint = Blueprint('firend_api', __name__)
+signup_blueprint = Blueprint('signup_api', __name__)
 
 
 def create_app(*config_cls) -> Flask:

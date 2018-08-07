@@ -3,7 +3,6 @@ import time
 
 from flask import Response
 from flask_restful import Resource
-from werkzeug.exceptions import HTTPException
 
 
 class BaseResource(Resource):
@@ -28,11 +27,15 @@ class BaseResource(Resource):
 
 def load_api():
     from app.views import sample
+    from app.views import friend, mail, signup
 
 
 def route(app):
-    from app import api_v1_blueprint
+    from app import api_v1_blueprint, mail_blueprint, friend_blueprint, signup_blueprint
 
     load_api()
 
     app.register_blueprint(api_v1_blueprint)
+    app.register_blueprint(mail_blueprint)
+    app.register_blueprint(friend_blueprint)
+    app.register_blueprint(signup_blueprint)
